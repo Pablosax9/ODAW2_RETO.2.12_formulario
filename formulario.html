@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Xunta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <!-- Primer bloque: Encabezado -->
+        <div class="header-grid">
+            <div class="logo-section">
+                <img src="xunta-logo.png" alt="">
+                <p>Jefatura territorial de <input type="text" id="input-jefatura" name="input-jefatura"></p>
+            </div>
+            <div class="header-title">
+                <h3>CERTIFICADO DE INSTALACIÓN DE</h3>
+                <label><input type="checkbox"> Climatización</label>
+                <label><input type="checkbox"> Calefacción</label>
+                <label><input type="checkbox"> Agua Caliente Sanitaria</label>
+                <label><input type="checkbox"> Ventilación</label>
+            </div>
+            <div class="legal-text">
+                <p>Legislación aplicable: Real Decreto 1027/2007, de 20 de julio, por el que se aprueba el RITE y sus Instrucciones
+                    Técnicas Complementarias, Orden del 24 de febrero de 2010
+                </p>
+            </div>
+        </div>
+
+        <!-- Segundo bloque: Datos de la instalación -->
+        <div class="section-grid">
+            <div class="section-title">
+                <h3>DATOS DE LA INSTALACIÓN</h3>
+            </div>
+            <h4><strong>Situación</strong></h4>
+            <div class="grid-row">
+                <label class="calle-lugar" for="calle">CALLE/LUGAR:</label>
+                <input type="text" id="calle" name="calle">
+                
+                <label class="codigo-postal" for="cp">CP:</label>
+                <input type="text" id="cp" name="cp">
+                
+                <label class="provincia-label" for="provincia">PROVINCIA:</label>
+                <input type="text" id="provincia" name="provincia">
+
+                <label class="ayuntamiento-label" for="ayuntamiento">AYUNTAMIENTO:</label>
+                <input type="text" id="ayuntamiento" name="ayuntamiento">
+                
+                <label class="ref-catastral-label" for="ref-catastral">REFERENCIA CATASTRAL:</label>
+                <input type="text" id="ref-catastral" name="ref-catastral">
+            </div>
+            <h4><strong>Titular</strong></h4>
+            <div class="grid-row">
+                
+                <label class="nombre-titular-label" for="titular-nombre">NOMBRE Y APELLIDOS/RAZÓN SOCIAL:</label>
+                <input type="text" id="titular-nombre" name="titular-nombre">
+                
+                <label class="titular-nif-label" for="titular-nif">NIF:</label>
+                <input type="text" id="titular-nif" name="titular-nif">
+
+                <label class="titular-direccion-label" for="titular-direccion">DIRECCIÓN:</label>
+                <input type="text" id="titular-direccion" name="titular-direccion">
+                
+                <label class="titular-cp-label" for="titular-cp">CP:</label>
+                <input type="text" id="titular-cp" name="titular-cp">
+                
+                <label class="titular-provincia-label" for="titular-provincia">PROVINCIA:</label>
+                <input type="text" id="titular-provincia" name="titular-provincia">
+                
+                <label class="titular-ayuntamiento-label" for="titular-ayuntamiento">AYUNTAMIENTO:</label>
+                <input type="text" id="titular-ayuntamiento" name="titular-ayuntamiento">
+            </div>
+            <h4><strong>Instalación</strong></h4>
+            <div class="grid-row-instalacion">
+
+                <label for="instalacion-nueva" class="instalacion-nueva-label">NUEVA</label>
+                <input type="checkbox" id="instalacion-nueva" name="instalacion-nueva">
+
+                <label for="instalacion-reforma" class="instalacion-reforma-label">REFORMA</label>
+                <input type="checkbox" id="instalacion-reforma" name="instalacion-reforma">
+
+                <label for="climatizacion" class="climatizacion-label">CLIMATIZACIÓN</label>
+                <input type="checkbox" id="climatizacion" name="climatizacion">
+
+                <label for="calefaccion" class="calefaccion-label">CALEFACCIÓN</label>
+                <input type="checkbox" id="calefaccion" name="calefaccion">
+
+                <label for="agua-caliente" class="agua-caliente-label">AGUA CALIENTE SANITARIA</label>
+                <input type="checkbox" id="agua-caliente" name="agua-caliente">
+
+                <label for="ventilacion" class="ventilacion-label">VENTILACIÓN</label>
+                <input type="checkbox" id="ventilacion" name="ventilacion">
+            </div>
+            <h4><strong>Destino de instalación</strong></h4>
+            <div class="grid-row-destino">
+
+                <label for="vivienda-unifamiliar" class="vivienda-unifamiliar-label">Vivienda unifamiliar</label>
+                <input type="checkbox" id="vivienda-unifamiliar" name="vivienda-unifamiliar">
+                
+                <label for="edificio-viviendas" class="edificio-viviendas-label">Edificio n° de viviendas</label>
+                <input type="checkbox" id="edificio-viviendas" name="edificio-viviendas">
+                <input type="text" id="numero-viviendas" name="numero-viviendas" placeholder="Número de viviendas">
+                
+                <label for="industrial" class="industrial-label">Industrial</label>
+                <input type="checkbox" id="industrial" name="industrial">
+                
+                <label for="otros" class="otros-label">Otros</label>
+                <input type="checkbox" id="otros" name="otros">
+                <input type="text" id="otros-input" name="otros-input" placeholder="Otro tipo">
+            </div>
+        </div>
+
+        <!-- Tercer bloque: Titular -->
+        <div class="section-grid">
+            <div class="section-title">
+                <h3>COMBUSTIBLES O ENERGIAS EMPLEADOS</h3>
+            </div>
+            <table class="table-combustibles">
+                <!-- Fila de títulos -->
+                <tr>
+                    <th>Generador (marca y modelo):</th>
+                    <th>Potencia nominal:</th>
+                    <th>Capacidad asociada:</th>
+                </tr>
+                <!-- Fila de entradas -->
+                <tr>
+                    <td><input type="text" id="generador" name="generador"></td>
+                    <td>
+                        <div class="input-with-unit">
+                            <input type="text" id="potencia-nominal" name="potencia-nominal">
+                            <span class="unit">kW</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-with-unit">
+                            <input type="text" id="capacidad-asociada" name="capacidad-asociada">
+                            <span class="unit">m³</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="generador" name="generador"></td>
+                    <td>
+                        <div class="input-with-unit">
+                            <input type="text" id="potencia-nominal" name="potencia-nominal">
+                            <span class="unit">kW</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-with-unit">
+                            <input type="text" id="capacidad-asociada" name="capacidad-asociada">
+                            <span class="unit">m³</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-grid">
+            <div class="section-title">
+                <h3>PRUEBAS (deben consignarse obligatoriamente)</h3>
+            </div>
+            <table class="table-pruebas">
+                <tr>
+                    <th>Prueba</th>
+                    <th>Fecha</th>
+                </tr>
+                <tr>
+                    <td>IT 2.2 Pruebas</td>
+                    <td><input type="date" id="fecha-prueba-1" name="fecha-prueba-1"></td>
+                </tr>
+                <tr>
+                    <td>IT 2.3 Ajuste y equilibrado</td>
+                    <td><input type="date" id="fecha-prueba-2" name="fecha-prueba-2"></td>
+                </tr>
+                <tr>
+                    <td>IT 2.4 Eficiencia energética</td>
+                    <td><input type="date" id="fecha-prueba-3" name="fecha-prueba-3"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Otras pruebas 
+                        <input type="text" id="detalle-otras-pruebas" name="detalle-otras-pruebas" placeholder="">
+                    </td>
+                    <td><input type="date" id="fecha-prueba-4" name="fecha-prueba-4"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="section-grid">
+            <div class="section-title">
+                <h3>EMPRESA INSTALADORA</h3>
+            </div>
+
+            <div class="grid-row-instaladora">
+                <label for="instaladora-nombre" class="instaladora-nombre-label">NOMBRE Y APELLIDOS/RAZÓN SOCIAL:</label>
+                <input type="text" id="instaladora-nombre" name="instaladora-nombre">
+                
+                <label for="registro" class="registro-label">N° DE REGISTRO:</label>
+                <input type="text" id="registro" name="registro">
+                
+                <label for="instalador-nombre" class="instalador-nombre-label">NOMBRE Y APELLIDOS DE LA PERSONA INSTALADORA:</label>
+                <input type="text" id="instalador-nombre" name="instalador-nombre">
+                
+                <label for="instalador-nif" class="instalador-nif-label">NIF:</label>
+                <input type="text" id="instalador-nif" name="instalador-nif">
+
+                <p class="texto-acuerdo">De acuerdo con las medidas y pruebas realizadas, de las que se adjuntan los resultados, certifico que la presente
+                    instalación fue ejecutada de acuerdo con el proyecto o memoria técnica y que cumple con los requisitos exigidos
+                    por el Reglamento de Instalaciones Térmicas en los Edificios y sus instrucciones técnicas complementarias IT.
+                </p>
+                <p class="instaladora">Instaladora
+                </p>
+                <!-- Sección con los inputs con Grid -->
+                <p class="fecha-dado">
+                    Dado en 
+                </p>
+                <input type="text" id="input1" name="input1">
+                <p class="coma">
+                    ,
+                </p> 
+                <input type="text" id="input2" name="input2">
+                <p class="de1">
+                    de
+                </p> 
+                <input type="text" id="input3" name="input3"> 
+                <p class="de2">
+                    de
+                </p> 
+                <input type="text" id="input4" name="input4">
+            </div>
+        </div>
+        <div class="section-grid">
+            <div class="section-title">
+                <h3>DIRECTOR DE LA INSTALACIÓN (sólo en los casos que necesitaron proyecto)</h3>
+            </div>
+            <div class="grid-row">
+                <label for="director-nombre" class="director-nombre-label">NOMBRE:</label>
+                <input type="text" id="director-nombre" name="director-nombre">
+
+                <label for="colegio" class="colegio-label">COLEGIO N°:</label>
+                <input type="text" id="colegio" name="colegio">
+
+                <label for="colegio2" class="colegio2-label">COLEGIO de:</label>
+                <input type="text" id="colegio2" name="colegio2">
+
+                <label for="proyecto" class="proyecto-label">TÍTULO DEL PROYECTO:</label>
+                <input type="text" id="proyecto" name="proyecto">
+
+                <h4 class="modificaciones-title">MODIFICACIONES AL PROYECTO Y SU JUSTIFICACIÓN</h4>
+                <textarea id="modificaciones" name="modificaciones"></textarea>
+
+                <p class="texto-acuerdo">De acuerdo con las medidas y pruebas realizadas, de las que se adjuntan los resultados, certifico que la presente
+                    instalación fue ejecutada de acuerdo con el proyecto o memoria técnica y que cumple con los requisitos exigidos
+                    por el Reglamento de Instalaciones Térmicas en los Edificios y sus instrucciones técnicas complementarias IT.
+                </p>
+                <p class="director">Firma del/la director/a de la instalación
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
